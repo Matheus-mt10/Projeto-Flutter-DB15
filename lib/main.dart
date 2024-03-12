@@ -58,13 +58,12 @@ class TelaListaDeCompras extends StatefulWidget {
 }
 
 class _TelaListaDeComprasState extends State<TelaListaDeCompras> {
-
-   List <String> listaDeProdutos = [
-      "SB Dunk Low Court Purple",
-      "Air Max 1 '86 OG Summit White",
-      "SB Dunk Low City Of Love"
-    ];
+  List<Produto> listaDeProdutos = [
+    Produto("Ronaldinho", 10),
+    Produto("Ronaldinho", 10)
     
+    ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,8 +74,18 @@ class _TelaListaDeComprasState extends State<TelaListaDeCompras> {
             itemCount: listaDeProdutos.length,
             itemBuilder: (context, index) {
               return ListTile(
-                title: Text(listaDeProdutos[index]),
+                title: Text(listaDeProdutos[index].nome),
               );
             }));
+  }
+}
+
+class Produto {
+  String nome = "";
+  double preco = 0.0;
+
+  Produto(String _nome, double _preco) {
+    nome = _nome;
+    preco = _preco;
   }
 }
